@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Masuk · Platform Pendidikan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div id="hdr"></div>
+
+<main class="container">
+  <div class="card logbox">
+    <h2 style="text-align:center">Selamat datang</h2>
+    <p style="text-align:center;color:var(--muted);margin:0">Pilih peran Anda untuk melanjutkan.</p>
+    <div class="roles">
+      <div class="role on" id="r-siswa" onclick="pick('siswa')"><div class="ico">🧒</div><h3>Siswa</h3><small>Ikuti ujian &amp; lihat nilai</small></div>
+      <div class="role" id="r-admin" onclick="pick('admin')"><div class="ico">👩‍🏫</div><h3>Admin / Guru</h3><small>Kelola ujian &amp; rekap</small></div>
+    </div>
+    <a class="btn btn-primary" id="go" href="dashboard.html?role=siswa">Lanjut sebagai Siswa</a>
+    <p class="note">ID dan PIN diisi pada halaman berikutnya. Hubungi wali kelas jika lupa PIN.</p>
+  </div>
+</main>
+
+<div id="ftr"></div>
+<script src="assets/site.js"></script>
+<script>
+function pick(r) {
+  ['siswa', 'admin'].forEach(x => $('#r-' + x).classList.toggle('on', x === r));
+  $('#go').href = 'dashboard.html?role=' + r;
+  $('#go').textContent = r === 'admin' ? 'Lanjut sebagai Admin / Guru' : 'Lanjut sebagai Siswa';
+}
+if (new URLSearchParams(location.search).get('role') === 'admin') pick('admin');
+</script>
+</body>
+</html>

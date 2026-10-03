@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dashboard · Platform Pendidikan</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body style="background:#fff">
+<div class="dbar">
+  <a href="login.html">← Kembali</a>
+  <b id="ttl">Dashboard</b>
+  <a id="newtab" href="#" target="_blank" rel="noopener">Buka di tab baru ↗</a>
+</div>
+<div id="warn" class="container" style="display:none;padding-top:40px">
+  <div class="card"><h3>Dashboard belum terhubung</h3>
+    <p>Buka <code>assets/site.js</code>, lalu isi <code>APPS_SCRIPT_URL</code> dengan URL Web App (berakhiran <code>/exec</code>) dari Deploy Apps Script.</p></div>
+</div>
+<iframe id="frame" class="dframe" title="Dashboard" allow="fullscreen"></iframe>
+<script src="assets/site.js"></script>
+<script>
+const role = new URLSearchParams(location.search).get('role') === 'admin' ? 'admin' : 'siswa';
+const url = CONFIG.APPS_SCRIPT_URL + (role === 'admin' ? '?mode=guru' : '');
+$('#ttl').textContent = role === 'admin' ? 'Dashboard Admin / Guru' : 'Dashboard Siswa';
+document.title = $('#ttl').textContent + ' · ' + CONFIG.NAMA;
+if (CONFIG.APPS_SCRIPT_URL.includes('GANTI_DENGAN')) {
+  $('#warn').style.display = 'block'; $('#frame').style.display = 'none'; $('#newtab').style.display = 'none';
+} else { $('#frame').src = url; $('#newtab').href = url; }
+</script>
+</body>
+</html>

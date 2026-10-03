@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Beranda · Platform Pendidikan</title>
+<meta name="description" content="Platform pembelajaran dan ujian online untuk siswa dan guru sekolah dasar.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div id="hdr"></div>
+
+<section class="hero"><div class="container">
+  <div>
+    <span class="eyebrow">Platform Pendidikan Digital</span>
+    <h1>Belajar lebih terarah, ujian lebih mudah.</h1>
+    <p>Ruang belajar online untuk siswa dan guru: ikuti ujian dengan timer otomatis, lihat nilai seketika, dan kelola bank soal dalam satu tempat.</p>
+    <div class="actions">
+      <a class="btn btn-gold" href="login.html">Masuk ke Dashboard</a>
+      <a class="btn btn-ghost" href="artikel.html">Baca Artikel</a>
+    </div>
+  </div>
+  <div class="panel">
+    <small>Ringkasan hasil belajar</small>
+    <div class="row"><span>📘 Matematika</span><b>92</b></div>
+    <div class="row"><span>🔬 IPAS</span><b>88</b></div>
+    <div class="row"><span>🇮🇩 Pendidikan Pancasila</span><b>95</b></div>
+    <div class="row"><span>⏱️ Sisa waktu ujian</span><b>12:40</b></div>
+  </div>
+</div></section>
+
+<section class="s"><div class="container">
+  <div class="head"><span class="eyebrow" style="color:var(--blue)">Fitur Utama</span><h2>Dirancang agar sederhana bagi siswa dan guru</h2></div>
+  <div class="grid3">
+    <div class="card"><div class="ico">📝</div><h3>Ujian Online</h3><p>Soal pilihan ganda dengan pengatur waktu dan penilaian otomatis begitu jawaban dikumpulkan.</p></div>
+    <div class="card"><div class="ico">📊</div><h3>Rekap Nilai</h3><p>Guru memantau rata-rata, nilai tertinggi dan terendah per kelas serta per mata pelajaran.</p></div>
+    <div class="card"><div class="ico">📚</div><h3>Bank Soal &amp; Materi</h3><p>Susun, ubah, dan atur jadwal ujian, serta simpan materi pelajaran dalam satu dashboard.</p></div>
+  </div>
+</div></section>
+
+<section class="s alt"><div class="container">
+  <div class="head"><span class="eyebrow" style="color:var(--blue)">Artikel Terbaru</span><h2>Wawasan untuk siswa, guru, dan orang tua</h2></div>
+  <div class="grid3" id="latest"></div>
+  <p style="margin-top:28px"><a class="btn btn-line" href="artikel.html">Lihat semua artikel</a></p>
+</div></section>
+
+<section class="s"><div class="container">
+  <div class="cta"><h2>Siap memulai?</h2><p>Pilih peran Anda sebagai siswa atau admin, lalu masuk dengan ID dan PIN dari sekolah.</p><a class="btn btn-gold" href="login.html">Masuk Sekarang</a></div>
+</div></section>
+
+<div id="ftr"></div>
+<script src="assets/site.js"></script>
+<script>document.getElementById('latest').innerHTML = ARTICLES.slice(0,3).map(a => articleCard(a,false)).join('');</script>
+</body>
+</html>
