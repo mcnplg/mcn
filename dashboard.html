@@ -21,7 +21,7 @@
 <script>
 const role = new URLSearchParams(location.search).get('role') === 'admin' ? 'admin' : 'siswa';
 const url = CONFIG.APPS_SCRIPT_URL + (role === 'admin' ? '?mode=guru' : '');
-$('#ttl').textContent = role === 'admin' ? 'Dashboard Admin / Guru' : 'Dashboard Siswa';
+$('#ttl').textContent = role === 'admin' ? 'Dashboard Guru' : 'Dashboard Siswa';
 document.title = $('#ttl').textContent + ' · ' + CONFIG.NAMA;
 if (CONFIG.APPS_SCRIPT_URL.includes('GANTI_DENGAN')) {
   $('#warn').style.display = 'block'; $('#frame').style.display = 'none'; $('#newtab').style.display = 'none';
