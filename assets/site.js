@@ -1,6 +1,6 @@
 /* ====== PENGATURAN: ubah bagian ini saja ====== */
 const CONFIG = {
-  NAMA: 'MCN 75',
+  NAMA: 'MCN75',
   TAGLINE: 'Belajar, berlatih, dan berprestasi bersama.',
   EMAIL: 'mcnplg@gmail.com',
   ALAMAT: 'Palembang Sumatera Selatan',
