@@ -1,13 +1,13 @@
 /* ====== PENGATURAN: ubah bagian ini saja ====== */
 const CONFIG = {
-  NAMA: 'SD Cerdas',
+  NAMA: 'MCN 75',
   // Logo sekolah: isi dengan path gambar, mis. 'assets/logo.png'. Kosongkan ('') untuk memakai ikon 🎓
-  LOGO: '',
+  LOGO: 'assets/logo.png',
   TAGLINE: 'Belajar, berlatih, dan berprestasi bersama.',
-  EMAIL: 'info@sekolahanda.sch.id',
-  ALAMAT: 'Alamat sekolah Anda',
+  EMAIL: 'mcnplg@gmail.com',
+  ALAMAT: 'Jl. Panca Usaha Palembang',
   // URL Web App hasil Deploy Apps Script (berakhiran /exec)
-  APPS_SCRIPT_URL: 'https://script.google.com/macros/s/GANTI_DENGAN_ID_DEPLOYMENT/exec'
+  APPS_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbwbnlVZoMuaJH1isyKh5dFIN5yb3Cur-ZTzKxtUS6Mu4cz-3_R0faZQBDK7dMQDg45DxA/exec'
 };
 
 const ARTICLES = [
