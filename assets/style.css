@@ -53,3 +53,5 @@ footer a{display:block;padding:3px 0}footer a:hover{color:#fff}footer .copy{bord
 .burger{display:block}nav{display:none;position:absolute;top:68px;left:0;right:0;background:#fff;flex-direction:column;align-items:stretch;padding:14px 20px;border-bottom:1px solid var(--line)}
 body.open nav{display:flex}.roles{grid-template-columns:1fr}.cta{padding:32px 20px}}
 .more{color:var(--blue);font-weight:700;font-size:15px}
+
+.logo.has-img{background:none;width:auto;height:auto}.logo img{display:block;height:38px;width:auto;max-width:120px;object-fit:contain}
