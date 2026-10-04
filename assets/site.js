@@ -5,7 +5,7 @@ const CONFIG = {
   EMAIL: 'info@sekolahanda.sch.id',
   ALAMAT: 'Alamat sekolah Anda',
   // URL Web App hasil Deploy Apps Script (berakhiran /exec)
-  APPS_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbzNPxNGJgMHCQ4kO64vPqSVpTYtNG0OTwyJqwd7uKuLV_1EhiTC0ZjfxZyplhu8jZt0nw/exec'
+  APPS_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbwbnlVZoMuaJH1isyKh5dFIN5yb3Cur-ZTzKxtUS6Mu4cz-3_R0faZQBDK7dMQDg45DxA/exec'
 };
 
 const ARTICLES = [
