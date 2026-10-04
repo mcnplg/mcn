@@ -1,11 +1,13 @@
 /* ====== PENGATURAN: ubah bagian ini saja ====== */
 const CONFIG = {
-  NAMA: 'MCN75',
+  NAMA: 'SD Cerdas',
+  // Logo sekolah: isi dengan path gambar, mis. 'assets/logo.png'. Kosongkan ('') untuk memakai ikon 🎓
+  LOGO: '',
   TAGLINE: 'Belajar, berlatih, dan berprestasi bersama.',
-  EMAIL: 'mcnplg@gmail.com',
-  ALAMAT: 'Palembang Sumatera Selatan',
+  EMAIL: 'info@sekolahanda.sch.id',
+  ALAMAT: 'Alamat sekolah Anda',
   // URL Web App hasil Deploy Apps Script (berakhiran /exec)
-  APPS_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbwbnlVZoMuaJH1isyKh5dFIN5yb3Cur-ZTzKxtUS6Mu4cz-3_R0faZQBDK7dMQDg45DxA/exec'
+  APPS_SCRIPT_URL: 'https://script.google.com/macros/s/GANTI_DENGAN_ID_DEPLOYMENT/exec'
 };
 
 const ARTICLES = [
@@ -47,16 +49,22 @@ function toggleCard(id) {
   b.hidden = !b.hidden; m.textContent = b.hidden ? 'Baca selengkapnya →' : 'Tutup ←';
 }
 
+function logoHTML(dark) {
+  return CONFIG.LOGO
+    ? '<span class="logo has-img"><img src="' + CONFIG.LOGO + '" alt="Logo ' + CONFIG.NAMA + '"></span>'
+    : '<span class="logo"' + (dark ? ' style="background:#ffffff1f"' : '') + '>🎓</span>';
+}
+
 function layout() {
   const p = location.pathname.split('/').pop() || 'index.html';
   const L = [['index.html', 'Beranda'], ['artikel.html', 'Artikel'], ['tentang.html', 'Tentang']];
   if ($('#hdr')) $('#hdr').innerHTML = `<header class="site"><div class="container bar">
-    <a class="brand" href="index.html"><span class="logo">🎓</span>${CONFIG.NAMA}</a>
+    <a class="brand" href="index.html">${logoHTML(false)}${CONFIG.NAMA}</a>
     <button class="burger" aria-label="Menu" onclick="document.body.classList.toggle('open')">☰</button>
     <nav>${L.map(([h, t]) => `<a href="${h}" class="${p === h ? 'on' : ''}">${t}</a>`).join('')}<a class="btn btn-primary" href="login.html">Masuk</a></nav>
   </div></header>`;
   if ($('#ftr')) $('#ftr').innerHTML = `<footer class="site"><div class="container"><div class="cols">
-    <div><div class="brand" style="color:#fff;margin-bottom:10px"><span class="logo" style="background:#ffffff1f">🎓</span>${CONFIG.NAMA}</div><p>${CONFIG.TAGLINE}</p></div>
+    <div><div class="brand" style="color:#fff;margin-bottom:10px">${logoHTML(true)}${CONFIG.NAMA}</div><p>${CONFIG.TAGLINE}</p></div>
     <div><h4>Navigasi</h4>${L.map(([h, t]) => `<a href="${h}">${t}</a>`).join('')}<a href="login.html">Masuk</a></div>
     <div><h4>Kontak</h4><a href="mailto:${CONFIG.EMAIL}">${CONFIG.EMAIL}</a><span>${CONFIG.ALAMAT}</span></div>
   </div><div class="copy">© ${new Date().getFullYear()} ${CONFIG.NAMA}. Seluruh hak cipta dilindungi.</div></div></footer>`;
